@@ -1,22 +1,28 @@
-package Task2;
+ package Task2;
+ import java.util.Scanner;
 
 public class palindrome_check {
-	public void palindrome_check()
+	public static void main(String[]args)
 	{
-		String str = "dad ";
-		String rev = "";
-		 for(int i=str.length()-1;i>=0;i--)
-		 {
-			rev = rev +str.charAt(i);
-		 }
-		 System.out.println("riverse "+ rev);
-		 if (str.equals(rev))
-			 System.out.println("palindrome");
-		 else 
-			 System.out.println("not a palindrome ");
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Number: ");
+		int number = scanner.nextInt();
 		
+		int reverse = 0;
+		int originalNumber = number;
 		
-		
+		while(number!=0) {
+			int digit = number%10;
+			reverse = reverse*10+digit;
+			number = number/10;
+		}
+		if(reverse == originalNumber) {
+			System.out.println("It is a palindrone NUmber");
+		}
+		else {
+			System.out.println("It is Not a palindrone Number");
+		}
+		scanner.close();
 		
 	}
 	
